@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matendere International | Premium Properties & Agriculture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #1e88e5; /* Changed to blue */
+            --accent-dark: #1565c0; /* Darker blue */
+            --accent-light: #64b5f6; /* Lighter blue */
+            --light: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--light);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 0.125rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--light);
+            border: 1px solid var(--light);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-link {
+            color: var(--accent);
+            padding: 0;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+        }
+        
+        .btn-link:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            background-color: var(--light);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header.scrolled .logo-text,
+        .header.scrolled .nav-link {
+            color: var(--primary);
+        }
+        
+        .header.scrolled .nav-link::after {
+            background-color: var(--accent);
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--light);
+            letter-spacing: -0.05em;
+        }
+        
+        .logo-accent {
+            color: var(--accent);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--light);
+            bottom: -6px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 750px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-subtitle {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            color: var(--light);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+        
+        .hero-description {
+            color: var(--gray-300);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* About Section */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-alt {
+            background-color: var(--gray-100);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .section-description {
+            color: var(--gray-600);
+            font-size: 1.125rem;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .about-card {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .about-text {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            box-shadow: var(--shadow-lg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-image {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-overlay {
+            opacity: 0.9;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-description {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Companies Section */
+        .company-card {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .company-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .company-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .company-icon {
+            width: 5rem;
+            height: 5rem;
+            background-color: var(--gray-100);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .company-card:hover .company-icon {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+        
+        .company-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .company-description {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 5rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-text {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080') center/cover no-repeat fixed;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-text {
+            color: var(--gray-300);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            padding-right: 2rem;
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-description {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+        }
+        
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--gray-100);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            flex-grow: 1;
+        }
+        
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+        
+        .contact-value {
+            color: var(--gray-600);
+        }
+        
+        .contact-value a {
+            color: var(--accent);
+        }
+        
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--gray-100);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--gray-700);
+            background-color: var(--light);
+            background-clip: padding-box;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.25rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--gray-400);
+            padding: 5rem 0 1.5rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-about {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .footer-title {
+            color: var(--light);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-link-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-link {
+            color: var(--gray-400);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-link i {
+            margin-right: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .footer-contact {
+            margin-bottom: 0.75rem;
+            display: flex;
+        }
+        
+        .footer-contact i {
+            color: var(--accent);
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .footer-newsletter {
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 0.25rem 0 0 0.25rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .newsletter-input::placeholder {
+            color: var(--gray-500);
+        }
+        
+        .newsletter-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+            border: none;
+            padding: 0 1.25rem;
+            border-radius: 0 0.25rem 0.25rem 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--accent-dark);
+        }
+        
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Property Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            height: 80vh;
+            min-height: 600px;
+        }
+        
+        .property-carousel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            z-index: 1;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        }
+        
+        .carousel-content {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            max-width: 600px;
+            color: var(--light);
+            z-index: 3;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .carousel-slide.active .carousel-content {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+        
+        .carousel-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .carousel-description {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 1rem;
+            margin-right: 2rem;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background-color: var(--accent);
+            transform: scale(1.2);
+        }
+        
+        .carousel-arrows {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-arrow:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Interactive Animation Classes */
+        .slide-from-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-from-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-from-bottom {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-from-top {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .zoom-out {
+            opacity: 0;
+            transform: scale(1.2);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-15deg) scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-from-left.active,
+        .slide-from-right.active,
+        .slide-from-bottom.active,
+        .slide-from-top.active,
+        .zoom-in.active,
+        .zoom-out.active,
+        .rotate-in.active {
+            opacity: 1;
+            transform: translateX(0) translateY(0) rotate(0) scale(1);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .about-grid, .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                max-width: 540px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 3rem;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                z-index: 1001;
+                gap: 1.5rem;
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--primary);
+                font-size: 1.25rem;
+            }
+            
+            .nav-link::after {
+                background-color: var(--accent);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-grid, .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 0.75rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Matendere <span class="logo-accent">International</span></div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#companies" class="nav-link">Subsidiaries</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle animate__animated animate__fadeInUp">Premier Property & Agriculture</p>
+                <h1 class="hero-title animate__animated animate__fadeInUp animate__delay-1s">Providing homes for generations</h1>
+                <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">Matendere International delivers innovative property development , rentals  and agricultural solutions that inspire, endure and transform lives across communities.</p>
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-3s">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">About Us</p>
+                <h2 class="section-title">Excellence in Property Development & Agriculture</h2>
+                <p class="section-description">With years of expertise and a commitment to quality, Matendere International has established itself as a leader in creating exceptional properties and sustainable agricultural solutions.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="about-title">Our Vision</h3>
+                    <p class="about-text">To be the premier property development and agricultural company, creating sustainable spaces and products that enhance lives and communities.</p>
+                    <a href="#" class="btn-link">Learn More</a>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="about-title">Our Mission</h3>
+                    <p class="about-text">Deliver exceptional rental properties and agricultural products that exceed expectations while maintaining the highest standards of innovation and quality.</p>
+                    <a href="#" class="btn-link">Learn More</a>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="about-title">Our Growth</h3>
+                    <p class="about-text">From our humble beginnings to a diversified enterprise, our journey is marked by continuous growth and strategic expansion into new sectors.</p>
+                    <a href="#" class="btn-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Showcase Carousel -->
+    <section id="property-showcase" class="section">
+        <div class="carousel-container">
+            <div class="property-carousel" id="propertyCarousel">
+                <div class="carousel-slide active">
+                    <div class="carousel-image" style="background-image: url('/api/placeholder/1920/1080');">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-content">
+                            <h2 class="carousel-title">Luxury Residential Complex</h2>
+                            <p class="carousel-description">Experience premium living spaces designed for comfort and elegance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-image" style="background-image: url('/api/placeholder/1920/1080');">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-content">
+                            <h2 class="carousel-title">Modern Office Buildings</h2>
+                            <p class="carousel-description">Innovative commercial spaces that inspire productivity and growth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="carousel-image" style="background-image: url('images/farm.png');"></div>
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-content">
+                            <h2 class="carousel-title">Sustainable Farmlands</h2>
+                            <p class="carousel-description">Agricultural excellence through sustainable farming practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                </div>
+                <div class="carousel-arrows">
+                    <button class="carousel-arrow carousel-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-arrow carousel-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Our Services</p>
+                <h2 class="section-title">Premium Solutions Tailored to Your Needs</h2>
+                <p class="section-description">We offer a comprehensive range of property development and agricultural services designed to create lasting value.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-image" style="background-image: url('/api/placeholder/800/500');">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Property Development</h3>
+                        <p class="service-description">From luxury residential complexes to commercial spaces, we develop properties that combine functionality, aesthetics, and sustainability.</p>
+                        <a href="#" class="btn-link">Discover More</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image" style="background-image: url('/api/placeholder/800/500');">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Property Management</h3>
+                        <p class="service-description">Our comprehensive property management solutions maximize returns and maintain property value with meticulous attention to detail.</p>
+                        <a href="#" class="btn-link">Discover More</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image" style="background-image: url('/api/placeholder/800/500');">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Agricultural Solutions</h3>
+                        <p class="service-description">Through Vimbo Farm Fresh, we provide innovative farming solutions focusing on sustainable practices and premium quality produce.</p>
+                        <a href="#" class="btn-link">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="15">15</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="120">120+</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="500">500+</div>
+                    <div class="stat-text">Happy Clients</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="3">3</div>
+                    <div class="stat-text">Company Divisions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section id="companies" class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Our Companies</p>
+                <h2 class="section-title">A Family of Specialized Companies</h2>
+                <p class="section-description">Matendere International operates a family of specialized companies, each focused on delivering excellence in its domain.</p>
+            </div>
+            <div class="about-grid">
+                <div class="company-card fade-in">
+                    <div class="company-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="company-name">Matendere Properties</h3>
+                    <p class="company-description">Our flagship company specializing in premium residential and commercial property development across multiple regions.</p>
+                    <a href="#" class="btn-link">Visit Website</a>
+                </div>
+                <div class="company-card fade-in">
+                    <div class="company-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="company-name">Vimbo Farm Fresh</h3>
+                    <p class="company-description">Dedicated to agricultural excellence, Vimbo Farm Fresh produces quality organic produce using sustainable farming methods.</p>
+                    <a href="#" class="btn-link">Visit Website</a>
+                </div>
+                <div class="company-card fade-in">
+                    <div class="company-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="company-name">Matendere Innovations</h3>
+                    <p class="company-description">Our technology arm focused on implementing innovative solutions for property management and agricultural efficiency.</p>
+                    <a href="#" class="btn-link">Visit Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Property Investment?</h2>
+            <p class="cta-text">Let's discuss how Matendere International can help you achieve your property and agricultural goals with our premium solutions.</p>
+            <a href="#contact" class="btn btn-primary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Get In Touch</p>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">We're always ready to hear from you. Get in touch with us for any inquiries or to schedule a consultation.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-title">Let's Connect</h3>
+                    <p class="contact-description">Reach out to us using any of the methods below, or fill out the form and we'll get back to you as soon as possible.</p>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Our Location</div>
+                                <div class="contact-value">123 Business Avenue, City Center, Country</div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Call Us</div>
+                                <div class="contact-value"><a href="tel:+1234567890">+123 456 7890</a></div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Email Us</div>
+                                <div class="contact-value"><a href="mailto:info@matendere.com">info@matendere.com</a></div>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Business Hours</div>
+                                <div class="contact-value">Mon - Fri: 9:00 AM - 5:00 PM</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-text">Matendere <span class="logo-accent">International</span></div>
+                    </div>
+                    <p class="footer-about">Matendere International is a leading property development and agricultural company committed to excellence, innovation, and sustainability in all our projects.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="#home" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li class="footer-link-item"><a href="#about" class="footer-link"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li class="footer-link-item"><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li class="footer-link-item"><a href="#companies" class="footer-link"><i class="fas fa-chevron-right"></i> Companies</a></li>
+                        <li class="footer-link-item"><a href="#contact" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Our Services</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Property Development</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Agricultural Solutions</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Investment Consulting</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Real Estate Advisory</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-newsletter">Subscribe to our newsletter to receive the latest updates and news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div style="margin-top: 1.5rem;">
+                        <div class="footer-contact">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>+123 456 7890</div>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <div>info@matendere.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Matendere International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        // Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navList = document.getElementById('navList');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        mobileToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        overlay.addEventListener('click', () => {
+            navList.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Property Carousel
+        const carousel = document.getElementById('propertyCarousel');
+        const carouselSlides = carousel ? carousel.querySelectorAll('.carousel-slide') : [];
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        let activeSlide = 0;
+        let carouselInterval;
+        
+        function showSlide(index) {
+            // Hide all slides
+            carouselSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Update dots
+            carouselDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the active slide
+            activeSlide = (index + carouselSlides.length) % carouselSlides.length;
+            carouselSlides[activeSlide].classList.add('active');
+            carouselDots[activeSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(activeSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(activeSlide - 1);
+        }
+        
+        function startCarousel() {
+            carouselInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopCarousel() {
+            clearInterval(carouselInterval);
+        }
+        
+        if (carousel) {
+            // Set up event listeners for carousel controls
+            carouselNext.addEventListener('click', () => {
+                nextSlide();
+                stopCarousel();
+                startCarousel();
+            });
+            
+            carouselPrev.addEventListener('click', () => {
+                prevSlide();
+                stopCarousel();
+                startCarousel();
+            });
+            
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    stopCarousel();
+                    startCarousel();
+                });
+            });
+            
+            // Start the carousel
+            startCarousel();
+            
+            // Pause carousel on hover
+            carousel.addEventListener('mouseenter', stopCarousel);
+            carousel.addEventListener('mouseleave', startCarousel);
+        }
+        
+        // Scroll Events
+        const header = document.querySelector('.header');
+        const backToTop = document.getElementById('backToTop');
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const animationElements = document.querySelectorAll('.slide-from-left, .slide-from-right, .slide-from-bottom, .slide-from-top, .zoom-in, .zoom-out, .rotate-in');
+        
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Scroll Trigger Animations
+        function initScrollTriggers() {
+            // Animate elements when they come into view
+            animationElements.forEach(element => {
+                ScrollTrigger.create({
+                    trigger: element,
+                    start: "top 80%",
+                    onEnter: () => element.classList.add('active'),
+                    once: true
+                });
+            });
+            
+            // Carousel scroll-triggered animation
+            if (carousel) {
+                ScrollTrigger.create({
+                    trigger: "#property-showcase",
+                    start: "top center",
+                    onEnter: () => {
+                        showSlide(0); // Reset to first slide when scrolling to section
+                        stopCarousel();
+                        startCarousel();
+                    }
+                });
+            }
+            
+            // Stat counters
+            statNumbers.forEach(number => {
+                ScrollTrigger.create({
+                    trigger: number,
+                    start: "top 80%",
+                    onEnter: () => countUp(number),
+                    once: true
+                });
+            });
+            
+            // Add more scroll trigger animations for interactive elements
+            gsap.to(".about-card", {
+                scrollTrigger: {
+                    trigger: ".about-grid",
+                    start: "top 70%"
+                },
+                stagger: 0.2,
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+            
+            gsap.to(".service-card", {
+                scrollTrigger: {
+                    trigger: ".services-grid",
+                    start: "top 70%"
+                },
+                stagger: 0.2,
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        }
+        
+        // Basic scroll handler for simple effects
+        window.addEventListener('scroll', () => {
+            // Header background on scroll
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+            
+            // Fade in elements on scroll (fallback for browsers without GSAP)
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Add form submission logic here
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+        
+        // Number counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        function countUp(number) {
+            const target = parseInt(number.getAttribute('data-count'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                number.textContent = Math.floor(current);
+                
+                if (current >= target) {
+                    number.textContent = target + (number.textContent.includes('+') ? '+' : '');
+                    clearInterval(timer);
+                }
+            }, 16);
+        }
+        
+        // Interactive elements
+        function addInteractiveEffects() {
+            // Add hover effects to service cards
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { y: -10, duration: 0.3, ease: "power2.out" });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+                });
+            });
+            
+            // Add hover effects to about cards
+            document.querySelectorAll('.about-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { y: -10, boxShadow: "0 20px 30px rgba(0,0,0,0.1)", duration: 0.3 });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { y: 0, boxShadow: "0 10px 15px rgba(0,0,0,0.1)", duration: 0.3 });
+                });
+            });
+        }
+        
+        // Initialize everything on window load
+        window.addEventListener('load', () => {
+            // Initialize scroll triggers
+            initScrollTriggers();
+            
+            // Add interactive effects
+            addInteractiveEffects();
+            
+            // Initial check for elements in view
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        });
+    </script>
